@@ -1,0 +1,30 @@
+{
+  "spring": [
+    {
+      "id": "001",
+      "name": "サクラ",
+      "imageName": "dummy",
+      "description": "description"
+    },
+    {
+      "id": "002",
+      "name": "スミレ",
+      "imageName": "dummy",
+      "description": "description"
+    }
+  ],
+  "summer": [
+    {
+      "id": "003",
+      "name": "ヒマワリ",
+      "imageName": "dummy",
+      "description": "description"
+    },
+    {
+      "id": "004",
+      "name": "アジサイ",
+      "imageName": "dummy",
+      "description": "description"
+    }
+  ]
+}

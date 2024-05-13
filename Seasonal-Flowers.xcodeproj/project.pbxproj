@@ -14,6 +14,12 @@
 		FEE895A32BF1C649009A3267 /* Seasonal_FlowersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895A22BF1C649009A3267 /* Seasonal_FlowersTests.swift */; };
 		FEE895AD2BF1C649009A3267 /* Seasonal_FlowersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895AC2BF1C649009A3267 /* Seasonal_FlowersUITests.swift */; };
 		FEE895AF2BF1C649009A3267 /* Seasonal_FlowersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895AE2BF1C649009A3267 /* Seasonal_FlowersUITestsLaunchTests.swift */; };
+		FEE895BE2BF1C82B009A3267 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895BD2BF1C82B009A3267 /* CategoryItem.swift */; };
+		FEE895C02BF1C837009A3267 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895BF2BF1C837009A3267 /* CategoryRow.swift */; };
+		FEE895C22BF1C840009A3267 /* CategoryHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895C12BF1C840009A3267 /* CategoryHome.swift */; };
+		FEE895CA2BF1C9A2009A3267 /* flowerData.json in Resources */ = {isa = PBXBuildFile; fileRef = FEE895C92BF1C9A2009A3267 /* flowerData.json */; };
+		FEE895CC2BF1CF33009A3267 /* flowers+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895CB2BF1CF33009A3267 /* flowers+mock.swift */; };
+		FEE895CF2BF1CF70009A3267 /* Flower.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895CE2BF1CF70009A3267 /* Flower.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		FEE895A82BF1C649009A3267 /* Seasonal-FlowersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Seasonal-FlowersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE895AC2BF1C649009A3267 /* Seasonal_FlowersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seasonal_FlowersUITests.swift; sourceTree = "<group>"; };
 		FEE895AE2BF1C649009A3267 /* Seasonal_FlowersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seasonal_FlowersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FEE895BD2BF1C82B009A3267 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
+		FEE895BF2BF1C837009A3267 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		FEE895C12BF1C840009A3267 /* CategoryHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHome.swift; sourceTree = "<group>"; };
+		FEE895C92BF1C9A2009A3267 /* flowerData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = flowerData.json; sourceTree = "<group>"; };
+		FEE895CB2BF1CF33009A3267 /* flowers+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "flowers+mock.swift"; sourceTree = "<group>"; };
+		FEE895CE2BF1CF70009A3267 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				FEE895912BF1C646009A3267 /* Seasonal_FlowersApp.swift */,
-				FEE895932BF1C646009A3267 /* ContentView.swift */,
+				FEE895BB2BF1C7C7009A3267 /* Views */,
 				FEE895952BF1C648009A3267 /* Assets.xcassets */,
+				FEE895C32BF1C894009A3267 /* Models */,
+				FEE895C42BF1C92C009A3267 /* Resources */,
 				FEE895972BF1C648009A3267 /* Preview Content */,
 			);
 			path = "Seasonal-Flowers";
@@ -106,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				FEE895982BF1C648009A3267 /* Preview Assets.xcassets */,
+				FEE895CD2BF1CF3A009A3267 /* Mocks */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -125,6 +140,49 @@
 				FEE895AE2BF1C649009A3267 /* Seasonal_FlowersUITestsLaunchTests.swift */,
 			);
 			path = "Seasonal-FlowersUITests";
+			sourceTree = "<group>";
+		};
+		FEE895BB2BF1C7C7009A3267 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FEE895932BF1C646009A3267 /* ContentView.swift */,
+				FEE895BC2BF1C7DF009A3267 /* Categories */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FEE895BC2BF1C7DF009A3267 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FEE895C12BF1C840009A3267 /* CategoryHome.swift */,
+				FEE895BF2BF1C837009A3267 /* CategoryRow.swift */,
+				FEE895BD2BF1C82B009A3267 /* CategoryItem.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		FEE895C32BF1C894009A3267 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FEE895CE2BF1CF70009A3267 /* Flower.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FEE895C42BF1C92C009A3267 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FEE895C92BF1C9A2009A3267 /* flowerData.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FEE895CD2BF1CF3A009A3267 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				FEE895CB2BF1CF33009A3267 /* flowers+mock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEE895CA2BF1C9A2009A3267 /* flowerData.json in Resources */,
 				FEE895992BF1C648009A3267 /* Preview Assets.xcassets in Resources */,
 				FEE895962BF1C648009A3267 /* Assets.xcassets in Resources */,
 			);
@@ -257,8 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEE895CF2BF1CF70009A3267 /* Flower.swift in Sources */,
 				FEE895942BF1C646009A3267 /* ContentView.swift in Sources */,
+				FEE895BE2BF1C82B009A3267 /* CategoryItem.swift in Sources */,
+				FEE895CC2BF1CF33009A3267 /* flowers+mock.swift in Sources */,
+				FEE895C02BF1C837009A3267 /* CategoryRow.swift in Sources */,
 				FEE895922BF1C646009A3267 /* Seasonal_FlowersApp.swift in Sources */,
+				FEE895C22BF1C840009A3267 /* CategoryHome.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
