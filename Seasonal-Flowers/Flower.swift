@@ -17,9 +17,9 @@ struct Flower: Identifiable {
    https://developer.apple.com/documentation/swift/caseiterable
    */
   enum Season: String, CaseIterable {
-    case autumn = "秋"
     case spring = "春"
     case summer = "夏"
+    case autumn = "秋"
     case winter = "冬"
   }
 }
