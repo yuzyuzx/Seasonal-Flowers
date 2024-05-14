@@ -15,6 +15,13 @@
   },
   {
     "id": "003",
+    "name": "バラ",
+    "imageName": "dummy",
+    "description": "バラの説明",
+    "season": "spring"
+  },
+  {
+    "id": "003",
     "name": "ヒマワリ",
     "imageName": "dummy",
     "description": "description",
