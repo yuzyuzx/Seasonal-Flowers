@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE5D2BD82BF22E1400EF790A /* FlowerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5D2BD72BF22E1400EF790A /* FlowerDetailView.swift */; };
 		FEE895922BF1C646009A3267 /* Seasonal_FlowersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895912BF1C646009A3267 /* Seasonal_FlowersApp.swift */; };
 		FEE895942BF1C646009A3267 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895932BF1C646009A3267 /* ContentView.swift */; };
 		FEE895962BF1C648009A3267 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE895952BF1C648009A3267 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE5D2BD72BF22E1400EF790A /* FlowerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailView.swift; sourceTree = "<group>"; };
 		FEE8958E2BF1C646009A3267 /* Seasonal-Flowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seasonal-Flowers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE895912BF1C646009A3267 /* Seasonal_FlowersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seasonal_FlowersApp.swift; sourceTree = "<group>"; };
 		FEE895932BF1C646009A3267 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				FEE895932BF1C646009A3267 /* ContentView.swift */,
 				FEE895BC2BF1C7DF009A3267 /* Categories */,
+				FE5D2BD72BF22E1400EF790A /* FlowerDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				FEE895CC2BF1CF33009A3267 /* flowers+mock.swift in Sources */,
 				FEE895C02BF1C837009A3267 /* CategoryRow.swift in Sources */,
 				FEE895922BF1C646009A3267 /* Seasonal_FlowersApp.swift in Sources */,
+				FE5D2BD82BF22E1400EF790A /* FlowerDetailView.swift in Sources */,
 				FEE895C22BF1C840009A3267 /* CategoryHome.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

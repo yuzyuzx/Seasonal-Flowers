@@ -1,18 +1,23 @@
-//
-//  CategoryItem.swift
-//  Seasonal-Flowers
-//
-//  Created by Yuz on 2024/05/13.
-//
-
 import SwiftUI
 
 struct CategoryItem: View {
+  let flower: Flower
+  
   var body: some View {
-    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    VStack(alignment: .leading) {
+      flower.image
+        .renderingMode(.original)
+        .resizable()
+        .frame(width: 155, height: 155)
+        .cornerRadius(5)
+      Text(flower.name)
+        .foregroundStyle(.primary)
+        .font(.caption)
+    }
+    .padding(.leading, 15)
   }
 }
 
 #Preview {
-  CategoryItem()
+  CategoryItem(flower: Flower.flowers[0])
 }

@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct Flower {
+struct Flower: Identifiable {
   var id: String
   var name: String
   var description: String
@@ -9,5 +9,17 @@ struct Flower {
   var imageName: String
   var image: Image {
     Image(imageName)
+  }
+  
+  var season: Season
+  /*
+   `CaseIterable`は`case`の宣言順通りに列挙する
+   https://developer.apple.com/documentation/swift/caseiterable
+   */
+  enum Season: String, CaseIterable {
+    case autumn = "秋"
+    case spring = "春"
+    case summer = "夏"
+    case winter = "冬"
   }
 }
