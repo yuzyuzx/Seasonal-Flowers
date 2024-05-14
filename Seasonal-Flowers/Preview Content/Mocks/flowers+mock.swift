@@ -33,6 +33,4 @@ extension Flower {
   ]
   
   static let flowerGroup: [String: [Flower]] = Dictionary(grouping: Flower.flowers, by: {$0.season.rawValue})
-  
-//  static var flowerGroup: [Flower.Season: [Flower]] = Dictionary(grouping: Flower.flowers, by: {$0.season})
 }
