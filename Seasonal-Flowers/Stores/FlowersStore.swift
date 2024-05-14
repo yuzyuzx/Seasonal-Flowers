@@ -11,13 +11,16 @@ class FlowersStore: ObservableObject {
   )
   
   func load() async {
-    try! await Task.sleep(nanoseconds: 1_000_000_000)
+//    try! await Task.sleep(nanoseconds: 1_000_000_000)
     
     let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json"
     let url = URL(string: jsonDataFileUrl)!
     
+    var urlRequest = URLRequest(url: url)
+    urlRequest.cachePolicy = .returnCacheDataElseLoad
+    
     // let (data, urlRequest) = try await URLSession.shared.data(from: url)
-    let (data, _) = try! await URLSession.shared.data(from: url)
+    let (data, _) = try! await URLSession.shared.data(for: urlRequest)
     
     let jsonData = try! JSONDecoder().decode([Flower].self, from: data)
     flowers = jsonData

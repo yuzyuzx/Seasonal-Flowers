@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CategoryHome: View {
-  //  private let flowers: [Flower] = Flower.flowers
+//    private let store: [Flower] = Flower.flowers
   @ObservedObject var store = FlowersStore()
   
   
