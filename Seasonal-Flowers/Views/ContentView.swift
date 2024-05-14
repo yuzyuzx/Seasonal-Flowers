@@ -1,24 +1,11 @@
-//
-//  ContentView.swift
-//  Seasonal-Flowers
-//
-//  Created by Yuz on 2024/05/13.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
+  var body: some View {
+    CategoryHome()
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
