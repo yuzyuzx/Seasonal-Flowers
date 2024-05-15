@@ -30,7 +30,12 @@ struct CategoryHome: View {
     } // end NavigationStack
     
     .task {
-      await store.load()
+      do {
+        try await store.load()
+      } catch {
+        // エラー処理
+        
+      }
     }
     
   } // end body

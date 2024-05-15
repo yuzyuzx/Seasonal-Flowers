@@ -1,6 +1,5 @@
 import Foundation
 
-@MainActor
 class FlowersStore: ObservableObject {
   @Published private(set) var flowers = [Flower]()
   
@@ -10,20 +9,49 @@ class FlowersStore: ObservableObject {
     by: { $0.season.rawValue}
   )
   
-  func load() async {
-//    try! await Task.sleep(nanoseconds: 1_000_000_000)
+  func load() async throws {
+    // try! await Task.sleep(nanoseconds: 1_000_000_000)
     
     let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json"
-    let url = URL(string: jsonDataFileUrl)!
     
-    var urlRequest = URLRequest(url: url)
-    urlRequest.cachePolicy = .returnCacheDataElseLoad
+    guard let url = URL(string: jsonDataFileUrl) else {
+      throw APIClientError.InvalidURL
+    }
     
-    // let (data, urlRequest) = try await URLSession.shared.data(from: url)
-    let (data, _) = try! await URLSession.shared.data(for: urlRequest)
-    
-    let jsonData = try! JSONDecoder().decode([Flower].self, from: data)
-    flowers = jsonData
+    do {
+      var urlRequest = URLRequest(url: url)
+      urlRequest.cachePolicy = .returnCacheDataElseLoad
+      
+      let (data, response) = try await URLSession.shared.data(for: urlRequest)
+      
+      guard let httpResponse = response as? HTTPURLResponse else {
+        throw APIClientError.ResponseError
+      }
+      
+      switch httpResponse.statusCode {
+        case 500...:
+          throw HttpError.ServerError
+        case 400...:
+          throw HttpError.ClientError
+        default:
+          break
+      }
+      
+      guard !data.isEmpty else {
+        throw APIClientError.NoData
+      }
+      
+      do {
+        let jsonData = try JSONDecoder().decode([Flower].self, from: data)
+        flowers = jsonData
+        
+      } catch {
+        throw JSONDecodeError.Failed
+      }
+      
+    } catch {
+      throw APIClientError.RequestFailed(error)
+    }
   }
   
 }
