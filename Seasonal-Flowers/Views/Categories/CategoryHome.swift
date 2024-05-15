@@ -15,14 +15,8 @@ struct CategoryHome: View {
             Text("failed")
             Button(action: {
               Task {
-                do {
-                  try await store.load()
-                } catch {
-                  // エラー処理
-                }
-                
+                await store.load()
               }
-              
             }) {
               Text("Reload")
             }
@@ -48,11 +42,7 @@ struct CategoryHome: View {
     } // end NavigationStack
     
     .task {
-      do {
-        try await store.load()
-      } catch {
-        // エラー処理
-      }
+      await store.load()
     } // end task
   } // end body
 }
