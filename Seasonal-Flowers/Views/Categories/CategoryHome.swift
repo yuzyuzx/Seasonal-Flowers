@@ -1,32 +1,50 @@
 import SwiftUI
 
 struct CategoryHome: View {
-//    private let store: [Flower] = Flower.flowers
+  //    private let store: [Flower] = Flower.flowers
   @ObservedObject var store = FlowersStore()
   
   
   var body: some View {
     NavigationStack {
-      if store.flowers.isEmpty {
-        ProgressView("loading...")
-      } else {
-        List {
-          ForEach(Flower.Season.allCases, id:\.self) { season in
-            if let data = store.seasons[season.rawValue] {
-              CategoryRow(
-                seasonName: season.rawValue,
-                items: data
-              )
+      switch store.state {
+        case .loading:
+          ProgressView("loading...")
+        case .failed:
+          VStack {
+            Text("failed")
+            Button(action: {
+              Task {
+                do {
+                  try await store.load()
+                } catch {
+                  // エラー処理
+                }
+                
+              }
+              
+            }) {
+              Text("Reload")
             }
-          } // end ForEach
+            
+          }
+        case .success:
+          List {
+            ForEach(Flower.Season.allCases, id:\.self) { season in
+              if let data = store.seasons[season.rawValue] {
+                CategoryRow(
+                  seasonName: season.rawValue,
+                  items: data
+                )
+              }
+            } // end ForEach
+            // List余白調整
+            .listRowInsets(EdgeInsets())
+            
+          } // end List
+          .navigationTitle("Flowers")
           
-          // List余白調整
-          .listRowInsets(EdgeInsets())
-        } // end List
-        
-        .navigationTitle("Flowers")
-      }
-      
+      } // end switch
     } // end NavigationStack
     
     .task {
@@ -34,10 +52,8 @@ struct CategoryHome: View {
         try await store.load()
       } catch {
         // エラー処理
-        
       }
-    }
-    
+    } // end task
   } // end body
 }
 
