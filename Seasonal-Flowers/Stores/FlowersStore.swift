@@ -2,6 +2,7 @@ import Foundation
 
 class FlowersStore: ObservableObject {
   @Published private(set) var flowers = [Flower]()
+  @Published private(set) var state: Stateful<[Flower]> = Stateful.loading
   
   private(set) lazy var seasons: [String: [Flower]] =
   Dictionary(
@@ -10,6 +11,7 @@ class FlowersStore: ObservableObject {
   )
   
   func load() async throws {
+    state = Stateful.loading
     // try! await Task.sleep(nanoseconds: 1_000_000_000)
     
     let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json"
@@ -44,12 +46,15 @@ class FlowersStore: ObservableObject {
       do {
         let jsonData = try JSONDecoder().decode([Flower].self, from: data)
         flowers = jsonData
+        state = Stateful.success(flowers)
         
       } catch {
+        state = Stateful.failed(error)
         throw JSONDecodeError.Failed
       }
       
     } catch {
+      state = Stateful.failed(error)
       throw APIClientError.RequestFailed(error)
     }
   }
