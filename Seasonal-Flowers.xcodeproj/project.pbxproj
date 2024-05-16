@@ -122,12 +122,12 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		FEC55E312BF4B63A00AD2B44 /* Status */ = {
+		FEC55E312BF4B63A00AD2B44 /* State */ = {
 			isa = PBXGroup;
 			children = (
 				FEC55E322BF4B64B00AD2B44 /* Stateful.swift */,
 			);
-			path = Status;
+			path = State;
 			sourceTree = "<group>";
 		};
 		FEE895852BF1C645009A3267 = {
@@ -155,7 +155,7 @@
 			children = (
 				FEE895952BF1C648009A3267 /* Assets.xcassets */,
 				FEE895912BF1C646009A3267 /* Seasonal_FlowersApp.swift */,
-				FEC55E312BF4B63A00AD2B44 /* Status */,
+				FEC55E312BF4B63A00AD2B44 /* State */,
 				FE5D2BD92BF336D000EF790A /* APIClients */,
 				FEC55E2E2BF4AB4000AD2B44 /* Errors */,
 				FEC55E2B2BF34A3500AD2B44 /* Stores */,

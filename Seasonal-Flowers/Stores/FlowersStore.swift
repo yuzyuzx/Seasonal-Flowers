@@ -3,7 +3,7 @@ import Foundation
 @MainActor
 class FlowersStore: ObservableObject {
   @Published private(set) var flowers = [Flower]()
-  @Published private(set) var state: Stateful = Stateful.loading
+  @Published private(set) var state: StateLoadFlowersData = .loading
   
   private(set) lazy var seasons: [String: [Flower]] =
   Dictionary(
@@ -13,14 +13,14 @@ class FlowersStore: ObservableObject {
   
   func load() async {
     try! await Task.sleep(nanoseconds: 1_000_000_000)
-    state = Stateful.loading
+    state = .loading
     
     do {
       flowers = try await FlowersAPIClient().fetch()
-      state = Stateful.success
+      state = .success
     } catch {
       print(error.localizedDescription)
-      state = Stateful.failed
+      state = .failed
     }
   }
   
