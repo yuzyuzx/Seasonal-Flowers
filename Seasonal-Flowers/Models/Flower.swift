@@ -18,7 +18,7 @@ struct Flower: Identifiable, Codable, Hashable {
   // `CaseIterable`は`case`の宣言順通りに列挙する
   // https://developer.apple.com/documentation/swift/caseiterable
   enum Season: String, CaseIterable, Codable {
-    // caseの順番がViewでの表示順となります
+    // caseの順番がViewでの表示順になる
     case spring = "spring"
     case summer = "summer"
     case autumn = "autumn"

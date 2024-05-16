@@ -7,7 +7,7 @@ enum APIClientError: Error, LocalizedError {
   // レスポンスエラー
   case ResponseError
   
-  // ファイルの内容が空
+  // データが空
   case NoData
   
   var errorDescription: String? {
@@ -17,7 +17,7 @@ enum APIClientError: Error, LocalizedError {
       case .ResponseError:
         return "レスポンスエラーです"
       case .NoData:
-        return "ファイルの内容が空です"
+        return "データの内容が空です"
     }
   }
 }

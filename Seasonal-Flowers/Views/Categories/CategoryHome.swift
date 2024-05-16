@@ -18,13 +18,18 @@ struct CategoryHome: View {
           // データの読み込み失敗
           VStack {
             Text("データの取得に失敗しました\nReloadボタンを押して再実行してください")
-            // TODO: ボタンのスタイルを実装する
             Button(action: {
               Task {
                 await store.load()
               }
             }) {
               Text("Reload")
+                .bold()
+                .padding()
+                .frame(width: 100, height: 50)
+                .foregroundColor(Color.white)
+                .background(Color.blue)
+                .cornerRadius(25)
             }
           }
         case .success:

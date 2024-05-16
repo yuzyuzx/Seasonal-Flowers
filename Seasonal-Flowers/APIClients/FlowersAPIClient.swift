@@ -9,13 +9,16 @@ struct FlowersAPIClient {
     let endpoint = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json"
     
     //  let endpoint = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerDat.json"
-    //  let endpoint = ""
-    //    let endpoint = "aaaa"
+    //      let endpoint = ""
     //  let endpoint = "https://yuzyuzx.github.io/api/test/empty.json"
-    //  let endpoint = "https://yuzyuzx.github.io/api/test/ok.txt"
+    //      let endpoint = "https://yuzyuzx.github.io/api/test/ok.txt"
     
     do {
       
+      // `loading`確認用処理（指定した秒数の処理を止める）
+      try! await Task.sleep(nanoseconds: 1_000_000_000)
+      
+      // `URL`が正しい形式かチェック
       guard let url = URL(string: endpoint) else {
         throw APIClientError.InvalidURL
       }
@@ -25,10 +28,12 @@ struct FlowersAPIClient {
       
       let (data, response) = try await URLSession.shared.data(for: urlRequest)
       
+      // `URLResponse`型から`HTTPURLResponse`型へダウンキャスト
       guard let httpResponse = response as? HTTPURLResponse else {
         throw APIClientError.ResponseError
       }
       
+      // ステータスコードをチェック
       switch httpResponse.statusCode {
         case 500...:
           throw HTTPError.Server
@@ -38,11 +43,13 @@ struct FlowersAPIClient {
           break
       }
       
+      // データが空ではないか
       guard !data.isEmpty else {
         throw APIClientError.NoData
       }
       
       do {
+        // 取得したJSONデータを`Flower`型に変換する
         return try JSONDecoder().decode([Flower].self, from: data)
       } catch {
         throw JSONError.DecodeFailed
