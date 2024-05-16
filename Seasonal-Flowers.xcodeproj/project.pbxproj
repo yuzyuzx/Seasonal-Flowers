@@ -13,6 +13,8 @@
 		FEC55E2D2BF34A6A00AD2B44 /* FlowersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC55E2C2BF34A6A00AD2B44 /* FlowersStore.swift */; };
 		FEC55E302BF4AB5600AD2B44 /* APIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC55E2F2BF4AB5600AD2B44 /* APIClientError.swift */; };
 		FEC55E332BF4B64B00AD2B44 /* Stateful.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC55E322BF4B64B00AD2B44 /* Stateful.swift */; };
+		FEC55E352BF6109E00AD2B44 /* JSONDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC55E342BF6109E00AD2B44 /* JSONDecodeError.swift */; };
+		FEC55E372BF610AE00AD2B44 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC55E362BF610AE00AD2B44 /* HTTPError.swift */; };
 		FEE895922BF1C646009A3267 /* Seasonal_FlowersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895912BF1C646009A3267 /* Seasonal_FlowersApp.swift */; };
 		FEE895942BF1C646009A3267 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE895932BF1C646009A3267 /* ContentView.swift */; };
 		FEE895962BF1C648009A3267 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEE895952BF1C648009A3267 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		FEC55E2C2BF34A6A00AD2B44 /* FlowersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowersStore.swift; sourceTree = "<group>"; };
 		FEC55E2F2BF4AB5600AD2B44 /* APIClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientError.swift; sourceTree = "<group>"; };
 		FEC55E322BF4B64B00AD2B44 /* Stateful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stateful.swift; sourceTree = "<group>"; };
+		FEC55E342BF6109E00AD2B44 /* JSONDecodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeError.swift; sourceTree = "<group>"; };
+		FEC55E362BF610AE00AD2B44 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		FEE8958E2BF1C646009A3267 /* Seasonal-Flowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seasonal-Flowers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE895912BF1C646009A3267 /* Seasonal_FlowersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seasonal_FlowersApp.swift; sourceTree = "<group>"; };
 		FEE895932BF1C646009A3267 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				FEC55E2F2BF4AB5600AD2B44 /* APIClientError.swift */,
+				FEC55E342BF6109E00AD2B44 /* JSONDecodeError.swift */,
+				FEC55E362BF610AE00AD2B44 /* HTTPError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -361,7 +367,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC55E352BF6109E00AD2B44 /* JSONDecodeError.swift in Sources */,
 				FEE895942BF1C646009A3267 /* ContentView.swift in Sources */,
+				FEC55E372BF610AE00AD2B44 /* HTTPError.swift in Sources */,
 				FEC55E332BF4B64B00AD2B44 /* Stateful.swift in Sources */,
 				FE5D2BDB2BF337BC00EF790A /* FlowersAPIClient.swift in Sources */,
 				FEC55E272BF340DD00AD2B44 /* Flower.swift in Sources */,

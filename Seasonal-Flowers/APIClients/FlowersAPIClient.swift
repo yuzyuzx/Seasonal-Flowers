@@ -2,11 +2,13 @@ import Foundation
 
 struct FlowersAPIClient {
   func fetch() async throws -> [Flower] {
-        let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json"
-    //    let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerDat.json"
-    //    let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json"
+//        let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json"
+//        let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerDat.json"
     
-//    let jsonDataFileUrl = "https://yuzyuzx.github.io/api/ok.txt"
+//    let jsonDataFileUrl = ""
+    let jsonDataFileUrl = "https://yuzyuzx.github.io/api/test/empty.json"
+    
+//    let jsonDataFileUrl = "https://yuzyuzx.github.io/api/test/ok.txt"
     
     do {
       
@@ -25,9 +27,9 @@ struct FlowersAPIClient {
       
       switch httpResponse.statusCode {
         case 500...:
-          throw HTTPError.ServerError
+          throw HTTPError.Server
         case 400...:
-          throw HTTPError.ClientError
+          throw HTTPError.Client
         default:
           break
       }

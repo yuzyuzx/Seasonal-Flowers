@@ -19,7 +19,7 @@ class FlowersStore: ObservableObject {
       flowers = try await FlowersAPIClient().fetch()
       state = Stateful.success
     } catch {
-      print(error)
+      print(error.localizedDescription)
       state = Stateful.failed
     }
   }

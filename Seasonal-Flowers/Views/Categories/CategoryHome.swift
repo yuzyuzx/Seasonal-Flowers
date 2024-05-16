@@ -12,7 +12,7 @@ struct CategoryHome: View {
           ProgressView("loading...")
         case .failed:
           VStack {
-            Text("failed")
+            Text("データの取得に失敗しました\nReloadボタンを押して再実行してください")
             Button(action: {
               Task {
                 await store.load()
