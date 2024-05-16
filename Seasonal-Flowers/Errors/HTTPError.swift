@@ -1,7 +1,10 @@
 import Foundation
 
 enum HTTPError: Error, LocalizedError {
+  // 400系エラー
   case Client
+  
+  // 500系エラー
   case Server
   
   var errorDescription: String? {

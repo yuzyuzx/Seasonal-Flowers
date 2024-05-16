@@ -1,11 +1,12 @@
 import Foundation
 
-enum JSONDecodeError: Error, LocalizedError {
-  case Failed
+enum JSONError: Error, LocalizedError {
+  // jsonデコードに失敗
+  case DecodeFailed
   
   var errorDescription: String? {
     switch self {
-      case .Failed:
+      case .DecodeFailed:
         return "デコード処理に失敗しました"
     }
   }

@@ -1,8 +1,13 @@
 import Foundation
 
 enum APIClientError: Error, LocalizedError {
+  // 不正なURL
   case InvalidURL
+  
+  // レスポンスエラー
   case ResponseError
+  
+  // ファイルの内容が空
   case NoData
   
   var errorDescription: String? {

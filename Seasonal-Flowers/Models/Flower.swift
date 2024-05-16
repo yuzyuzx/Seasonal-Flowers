@@ -1,6 +1,9 @@
 import Foundation
 import SwiftUI
 
+/**
+ 表示するデータの構造体
+ */
 struct Flower: Identifiable, Codable, Hashable {
   var id: String
   var name: String
@@ -11,16 +14,14 @@ struct Flower: Identifiable, Codable, Hashable {
     Image(imageName)
   }
   
-//  var season: String
   var season: Season
-  /*
-   `CaseIterable`は`case`の宣言順通りに列挙する
-   https://developer.apple.com/documentation/swift/caseiterable
-   */
+  // `CaseIterable`は`case`の宣言順通りに列挙する
+  // https://developer.apple.com/documentation/swift/caseiterable
   enum Season: String, CaseIterable, Codable {
+    // caseの順番がViewでの表示順となります
     case spring = "spring"
     case summer = "summer"
-    case autumn = "秋"
-    case winter = "冬"
+    case autumn = "autumn"
+    case winter = "winter"
   }
 }

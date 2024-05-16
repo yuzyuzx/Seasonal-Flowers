@@ -1,18 +1,22 @@
 import Foundation
 
+/**
+ WebAPIリクエスト処理
+ */
 struct FlowersAPIClient {
   func fetch() async throws -> [Flower] {
-      let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json"
     
-    //  let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerDat.json"
-    //  let jsonDataFileUrl = ""
-//    let jsonDataFileUrl = "aaaa"
-    //  let jsonDataFileUrl = "https://yuzyuzx.github.io/api/test/empty.json"
-    //  let jsonDataFileUrl = "https://yuzyuzx.github.io/api/test/ok.txt"
+    let endpoint = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json"
+    
+    //  let endpoint = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerDat.json"
+    //  let endpoint = ""
+    //    let endpoint = "aaaa"
+    //  let endpoint = "https://yuzyuzx.github.io/api/test/empty.json"
+    //  let endpoint = "https://yuzyuzx.github.io/api/test/ok.txt"
     
     do {
       
-      guard let url = URL(string: jsonDataFileUrl) else {
+      guard let url = URL(string: endpoint) else {
         throw APIClientError.InvalidURL
       }
       
@@ -41,7 +45,7 @@ struct FlowersAPIClient {
       do {
         return try JSONDecoder().decode([Flower].self, from: data)
       } catch {
-        throw JSONDecodeError.Failed
+        throw JSONError.DecodeFailed
       }
       
     } catch {

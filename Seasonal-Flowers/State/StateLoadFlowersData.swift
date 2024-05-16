@@ -1,7 +1,7 @@
 import Foundation
 
 /**
- APIデータを読み込み時の状態を表す型
+ APIデータを読み込むときの状態を表す型
  */
 enum StateLoadFlowersData {
   // 読み込み中
