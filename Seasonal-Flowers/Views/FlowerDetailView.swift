@@ -19,19 +19,14 @@ struct FlowerDetailView: View {
             .font(.title)
         }
         
-//        HStack {
-//          Text(flower.name)
-//          Spacer()
-//          Text(flower.name)
-//        }
-//        .font(.subheadline)
-//        .foregroundStyle(.secondary)
-        
         Divider()
         
-        Text("概要 \(flower.name)")
-          .font(.title2)
-        Text(flower.description)
+        VStack(alignment: .leading, spacing: 10.0) {
+          Text("\(flower.name)について")
+            .font(.title2)
+          Text(flower.description)
+          
+        }
       }
       .padding()
     }
@@ -41,5 +36,7 @@ struct FlowerDetailView: View {
 }
 
 #Preview {
-  FlowerDetailView(flower: Flower.flowers[0])
+  NavigationStack {
+    FlowerDetailView(flower: Flower.flowers[0])
+  }
 }

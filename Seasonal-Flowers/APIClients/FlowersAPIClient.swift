@@ -2,13 +2,13 @@ import Foundation
 
 struct FlowersAPIClient {
   func fetch() async throws -> [Flower] {
-        let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json"
-//        let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerDat.json"
+      let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json"
     
-//    let jsonDataFileUrl = ""
-//    let jsonDataFileUrl = "https://yuzyuzx.github.io/api/test/empty.json"
-    
-//    let jsonDataFileUrl = "https://yuzyuzx.github.io/api/test/ok.txt"
+    //  let jsonDataFileUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/flowerDat.json"
+    //  let jsonDataFileUrl = ""
+//    let jsonDataFileUrl = "aaaa"
+    //  let jsonDataFileUrl = "https://yuzyuzx.github.io/api/test/empty.json"
+    //  let jsonDataFileUrl = "https://yuzyuzx.github.io/api/test/ok.txt"
     
     do {
       
@@ -16,8 +16,8 @@ struct FlowersAPIClient {
         throw APIClientError.InvalidURL
       }
       
-      //      let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
-      let urlRequest = URLRequest(url: url)
+      let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
+      // let urlRequest = URLRequest(url: url)
       
       let (data, response) = try await URLSession.shared.data(for: urlRequest)
       
