@@ -7,7 +7,10 @@ enum APIClientError: Error {
 }
 
 enum HTTPError: Error {
+  // 400系エラー
   case ClientError
+  
+  // 500系エラー
   case ServerError
 }
 
