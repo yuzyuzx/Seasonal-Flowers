@@ -20,6 +20,8 @@ struct CategoryHome: View {
             Text("データの取得に失敗しました\nReloadボタンを押して再実行してください")
             Button(action: {
               Task {
+                // データを非同期で取得する
+                // 非同期処理は`Task`の中で呼び出す
                 await store.load()
               }
             }) {
@@ -54,6 +56,7 @@ struct CategoryHome: View {
     
     .task {
       // データを非同期で取得する
+      // 非同期処理は`task`の中で呼び出す
       await store.load()
     }
     

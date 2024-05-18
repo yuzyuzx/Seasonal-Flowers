@@ -25,6 +25,7 @@ class FlowersStore: ObservableObject {
    非同期でデータを取得するメソッド
    */
   func load() async {
+    print("start load")
     // 状態変数を読込中にする
     state = .loading
     
@@ -37,6 +38,7 @@ class FlowersStore: ObservableObject {
       // 状態変数を読み込み失敗にする
       state = .failed
     }
+    print("end load")
   }
   
 }
