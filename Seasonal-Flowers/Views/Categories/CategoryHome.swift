@@ -53,7 +53,6 @@ struct CategoryHome: View {
           
       } // end switch
     } // end NavigationStack
-    
     .task {
       // データを非同期で取得する
       // 非同期処理は`task`の中で呼び出す
