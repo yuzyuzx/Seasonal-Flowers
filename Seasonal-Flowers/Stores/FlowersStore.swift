@@ -22,15 +22,28 @@ class FlowersStore: ObservableObject {
   )
   
   /**
+   データ取得イベントの型
+   */
+  enum Action {
+    // 初回起動時に指定
+    case onApper
+    
+    // リロードボタンイベントに指定
+    case onReload
+  }
+  
+  /**
    非同期でデータを取得するメソッド
    */
-  func load() async {
-    print("start load")
+  func load(_ action: Action) async {
+    
     // 状態変数を読込中にする
     state = .loading
     
+    let endpoint = selectEndpoint(action)
+    
     do {
-      flowers = try await FlowersAPIClient().fetch()
+      flowers = try await FlowersAPIClient().fetch(endpoint)
       // 状態変数を読み込み完了にする
       state = .success
     } catch {
@@ -38,7 +51,27 @@ class FlowersStore: ObservableObject {
       // 状態変数を読み込み失敗にする
       state = .failed
     }
-    print("end load")
+  }
+  
+  /**
+   エンドポイントを選択する
+   テスト用としてActionケースが`onApper`の場合（初回起動時）は、
+   エラー用ファイルを指定する
+   */
+  func selectEndpoint(_ action: Action) -> String {
+    let baseUrl = "https://yuzyuzx.github.io/api/seasonal-flowers"
+    
+    let okfile = "flowerData.json"
+    let ngfile = "notExsits.json"
+    
+    let f = switch action {
+    case .onApper:
+      ngfile
+    case .onReload:
+      okfile
+    }
+    
+    return String(format: "%@/%@", baseUrl, f)
   }
   
 }

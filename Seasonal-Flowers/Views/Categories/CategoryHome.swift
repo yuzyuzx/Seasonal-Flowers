@@ -17,12 +17,15 @@ struct CategoryHome: View {
         case .failed:
           // データの読み込み失敗
           VStack {
-            Text("データの取得に失敗しました\nReloadボタンを押して再実行してください")
+            VStack(alignment: .leading, spacing: 10.0) {
+              Text("データの取得に失敗しました")
+              Text("Reloadボタンを押して再実行してください")
+            }
             Button(action: {
               Task {
                 // データを非同期で取得する
                 // 非同期処理は`Task`の中で呼び出す
-                await store.load()
+                await store.load(.onReload)
               }
             }) {
               Text("Reload")
@@ -33,6 +36,9 @@ struct CategoryHome: View {
                 .background(Color.blue)
                 .cornerRadius(25)
             }
+            Text("【テスト用として初回起動時はデータの読み込みを失敗させています】")
+              .padding()
+              .foregroundStyle(.blue)
           }
         case .success:
           // データの読み込み完了
@@ -56,7 +62,7 @@ struct CategoryHome: View {
     .task {
       // データを非同期で取得する
       // 非同期処理は`task`の中で呼び出す
-      await store.load()
+      await store.load(.onApper)
     }
     
   } // end body

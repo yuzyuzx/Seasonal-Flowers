@@ -4,29 +4,13 @@ import Foundation
  WebAPIリクエスト処理
  */
 struct FlowersAPIClient {
-  /**
-   【データ取得エラー時の確認用メソッド】
-   エンドポイントのURLをランダムに指定する
-   正常なURLと不正なURLを用意して、ランダムに出し分ける
-   */
-  func selectRandomEndpoint() -> String {
-    let baseUrl = "https://yuzyuzx.github.io/api/seasonal-flowers"
-    
-    let okfile = "flowerData.json"
-    
-    let endpoint = [
-      "flowerData.json",  // 正常
-      "notExsits.json"  // 異常
-    ].randomElement() ?? okfile
-    
-    return String(format: "%@/%@", baseUrl, endpoint)
-  }
   
-  func fetch() async throws -> [Flower] {
+  /**
+   指定したエンドポイントのデータを取得する
+   */
+  func fetch(_ endpoint: String) async throws -> [Flower] {
     
     do {
-      let endpoint = selectRandomEndpoint()
-      
       // `loading`確認用処理（指定した秒数の処理を止める）
       try! await Task.sleep(nanoseconds: 1_000_000_000)
       
