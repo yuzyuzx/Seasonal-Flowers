@@ -18,8 +18,8 @@ struct CategoryHome: View {
           // データの読み込み失敗
           VStack {
             VStack(alignment: .leading, spacing: 10.0) {
-              Text("データの取得に失敗しました")
-              Text("Reloadボタンを押して再実行してください")
+              Text("データの取得に失敗しました。")
+              Text("リロードボタンを押して、再度お試しください。")
             }
             Button(action: {
               Task {
@@ -36,7 +36,7 @@ struct CategoryHome: View {
                 .background(Color.blue)
                 .cornerRadius(25)
             }
-            Text("【テスト用として初回起動時はデータの読み込みを失敗させています】")
+            Text("【検証用として、初回起動時にエラーが発生するように設定しています。】")
               .padding()
               .foregroundStyle(.blue)
           }
