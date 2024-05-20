@@ -10,8 +10,6 @@ struct FlowerDetailView: View {
         .resizable()
         .scaledToFit()
         .frame(height: 300)
-//        .clipped()
-//        .listRowInsets(EdgeInsets())
       
       VStack(alignment: .leading) {
         Text(flower.name)

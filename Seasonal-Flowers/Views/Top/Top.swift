@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CategoryHome: View {
+struct Top: View {
   //    private let store: [Flower] = Flower.flowers
   
   // Store側で更新されるデータを監視
@@ -46,7 +46,7 @@ struct CategoryHome: View {
           List {
             ForEach(Flower.Season.allCases, id:\.self) { season in
               if let data = store.seasons[season.rawValue] {
-                CategoryRow(
+                TopRow(
                   seasonName: seasonStore.getDisplaySeasonName(
                     season: season.rawValue),
                   items: data
@@ -71,5 +71,5 @@ struct CategoryHome: View {
 }
 
 #Preview {
-  CategoryHome()
+  Top()
 }

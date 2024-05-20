@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CategoryItem: View {
+struct TopItem: View {
   let flower: Flower
   
   var body: some View {
@@ -19,5 +19,5 @@ struct CategoryItem: View {
 }
 
 #Preview {
-  CategoryItem(flower: Flower.flowers[0])
+  TopItem(flower: Flower.flowers[0])
 }
