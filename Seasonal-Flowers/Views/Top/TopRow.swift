@@ -33,6 +33,6 @@ struct TopRow: View {
   
   return TopRow(
     seasonName: flowers[0].season.rawValue,
-    items: Array(flowers.prefix(2))
+    items: Array(flowers.prefix(5))
   )
 }
