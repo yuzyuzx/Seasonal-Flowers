@@ -11,7 +11,7 @@ struct Flower: Identifiable, Codable, Hashable {
   
   var imageName: String
   var image: Image {
-    Image(imageName)
+    Image("images/\(imageName)")
   }
   
   var season: Season
@@ -24,4 +24,5 @@ struct Flower: Identifiable, Codable, Hashable {
     case autumn = "autumn"
     case winter = "winter"
   }
+  
 }

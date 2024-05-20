@@ -6,6 +6,7 @@ struct CategoryHome: View {
   // Store側で更新されるデータを監視
   // データが更新されるとViewに反映する
   @ObservedObject var store = FlowersStore()
+  let seasonStore = SeasonStore()
   
   var body: some View {
     NavigationStack {
@@ -46,7 +47,8 @@ struct CategoryHome: View {
             ForEach(Flower.Season.allCases, id:\.self) { season in
               if let data = store.seasons[season.rawValue] {
                 CategoryRow(
-                  seasonName: season.rawValue,
+                  seasonName: seasonStore.getDisplaySeasonName(
+                    season: season.rawValue),
                   items: data
                 )
               }

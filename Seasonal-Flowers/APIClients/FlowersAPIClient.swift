@@ -19,8 +19,8 @@ struct FlowersAPIClient {
         throw APIClientError.InvalidURL
       }
       
-      let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
-      // let urlRequest = URLRequest(url: url)
+//      let urlRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
+       let urlRequest = URLRequest(url: url)
       
       let (data, response) = try await URLSession.shared.data(for: urlRequest)
       

@@ -66,7 +66,8 @@ class FlowersStore: ObservableObject {
     
     let f = switch action {
     case .onApper:
-      ngfile
+//      ngfile
+      okfile
     case .onReload:
       okfile
     }

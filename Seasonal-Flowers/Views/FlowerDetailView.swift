@@ -8,16 +8,14 @@ struct FlowerDetailView: View {
     ScrollView {
       flower.image
         .resizable()
-        .scaledToFill()
-        .frame(height: 400)
-        .clipped()
-        .listRowInsets(EdgeInsets())
+        .scaledToFit()
+        .frame(height: 300)
+//        .clipped()
+//        .listRowInsets(EdgeInsets())
       
       VStack(alignment: .leading) {
-        HStack {
-          Text(flower.name)
-            .font(.title)
-        }
+        Text(flower.name)
+          .font(.title)
         
         Divider()
         
