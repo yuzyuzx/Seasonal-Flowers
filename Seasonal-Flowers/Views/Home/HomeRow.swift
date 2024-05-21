@@ -1,7 +1,7 @@
 import SwiftUI
 
 
-struct TopRow: View {
+struct HomeRow: View {
   var seasonName: String
   var items: [Flower]
   
@@ -18,7 +18,7 @@ struct TopRow: View {
             NavigationLink {
               FlowerDetailView(flower: flower)
             } label: {
-              TopItem(flower: flower)
+              HomeItem(flower: flower)
             }
           }
         }
@@ -31,7 +31,7 @@ struct TopRow: View {
 #Preview {
   let flowers = Flower.flowers
   
-  return TopRow(
+  return HomeRow(
     seasonName: flowers[0].season.rawValue,
     items: Array(flowers.prefix(5))
   )
