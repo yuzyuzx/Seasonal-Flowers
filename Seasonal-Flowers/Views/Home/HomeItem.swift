@@ -11,7 +11,7 @@ struct HomeItem: View {
         .frame(width: 155, height: 155)
         .cornerRadius(5)
       Text(flower.name)
-        .foregroundStyle(.primary)
+        .foregroundColor(.primary)
         .font(.caption)
     }
     .padding(.leading, 15)

@@ -38,6 +38,7 @@ struct Home: View {
             Text("【検証用として、初回起動時にエラーが発生するように設定しています。】")
               .padding()
               .foregroundStyle(.blue)
+              .fontWeight(.bold)
           }
         case .success:
           // データの読み込み完了
