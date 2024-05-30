@@ -6,10 +6,20 @@ struct FlowerDetailView: View {
   var body: some View {
     
     ScrollView {
-      flower.image
-        .resizable()
-        .scaledToFit()
-        .frame(height: 300)
+      AsyncImage(url: URL(string: flower.imageName)) { phase in
+        switch phase {
+          case .failure:
+            Image(systemName: "photo")
+              .font(.largeTitle)
+          case .success(let image):
+            image
+              .resizable()
+              .scaledToFit()
+              .frame(height: 300)
+          default:
+            ProgressView()
+        }
+      } // end AsyncImage closure
       
       VStack(alignment: .leading) {
         Text(flower.name)
@@ -22,13 +32,15 @@ struct FlowerDetailView: View {
             .font(.title2)
           Text(flower.description)
           
-        }
-      }
+        } // end VStack
+      } // end VStack
       .padding()
-    }
+    } // end ScrollView
+    
     .navigationTitle(flower.name)
     .navigationBarTitleDisplayMode(.inline)
-  }
+    
+  } // end body
 }
 
 #Preview {

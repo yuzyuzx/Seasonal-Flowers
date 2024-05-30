@@ -10,9 +10,10 @@ struct Flower: Identifiable, Codable, Hashable {
   var description: String
   
   var imageName: String
-  var image: Image {
-    Image("images/\(imageName)")
-  }
+//  var image: Image {
+//    Image("images/\(imageName)")
+//  }
+  
   
   var season: Season
   // `CaseIterable`は`case`の宣言順通りに列挙する
