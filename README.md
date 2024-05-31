@@ -6,21 +6,21 @@ Seasonal Flowers
 
 ### 概要
 
-このアプリはアプリ開発の学習を目的として作成されたシンプルなアプリです。
+このアプリはアプリ開発の学習を目的として作成されたシンプルなアプリです。  
 季節ごとの花の一覧を表示し、花の名前、説明、写真を閲覧することができます。
 
-### デモ動画 スクリーンショット
+### デモ動画
 
-デモ動画やスクリーンショットを貼り付ける
+![Demo](https://github.com/yuzyuzx/assets/blob/main/seasonal-flowers/001.gif)
 
 ### ソースコード
 
-`github`へのリンク
-`api`へのリンク
+[GitHub](https://github.com/yuzyuzx/seasonal-flowers/tree/main)  
+[API](https://yuzyuzx.github.io/api/seasonal-flowers/flowerData.json)
 
 ### アプリ開発の目的
 
-このアプリはアプリ開発の一通りのプロセスを学習するために開発しました。
+このアプリはアプリ開発の一通りのプロセスを学習するために開発しました。  
 自分で設計・作成したAPI(jsonファイル)をサーバーに配置し、非同期でのデータの取得・表示に焦点を当てています。
 
 ### 実装内容
