@@ -49,7 +49,6 @@
 /* Begin PBXFileReference section */
 		FE5D2BD72BF22E1400EF790A /* FlowerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetailView.swift; sourceTree = "<group>"; };
 		FE5D2BDA2BF337BC00EF790A /* FlowersAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowersAPIClient.swift; sourceTree = "<group>"; };
-		FE5D2BDC2BF33B4400EF790A /* flowerData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = flowerData.json; sourceTree = "<group>"; };
 		FEB3A7CD2BFB268800301ADD /* SeasonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonStore.swift; sourceTree = "<group>"; };
 		FEC55E262BF340DD00AD2B44 /* Flower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flower.swift; path = "Seasonal-Flowers/Models/Flower.swift"; sourceTree = SOURCE_ROOT; };
 		FEC55E2C2BF34A6A00AD2B44 /* FlowersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowersStore.swift; sourceTree = "<group>"; };
@@ -172,7 +171,6 @@
 				FEC55E2B2BF34A3500AD2B44 /* Stores */,
 				FEE895BB2BF1C7C7009A3267 /* Views */,
 				FEE895C32BF1C894009A3267 /* Models */,
-				FEE895C42BF1C92C009A3267 /* Resources */,
 				FEE895972BF1C648009A3267 /* Preview Content */,
 			);
 			path = "Seasonal-Flowers";
@@ -230,14 +228,6 @@
 				FEC55E262BF340DD00AD2B44 /* Flower.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		FEE895C42BF1C92C009A3267 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				FE5D2BDC2BF33B4400EF790A /* flowerData.json */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		FEE895CD2BF1CF3A009A3267 /* Mocks */ = {

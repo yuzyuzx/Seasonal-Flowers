@@ -10,9 +10,10 @@ struct Flower: Identifiable, Codable, Hashable {
   var description: String
   
   var imageName: String
-//  var image: Image {
-//    Image("images/\(imageName)")
-//  }
+  var image: String {
+    let imageApiUrl = "https://yuzyuzx.github.io/api/seasonal-flowers/images"
+    return ("\(imageApiUrl)/\(imageName)")
+  }
   
   
   var season: Season

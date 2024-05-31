@@ -5,7 +5,7 @@ struct HomeItem: View {
   
   var body: some View {
     
-      AsyncImage(url: URL(string: flower.imageName)) { phase in
+      AsyncImage(url: URL(string: flower.image)) { phase in
         switch phase {
           case .failure:
             Image(systemName: "photo")
