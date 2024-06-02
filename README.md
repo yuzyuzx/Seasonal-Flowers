@@ -11,7 +11,7 @@ Seasonal Flowers
 
 ### デモ動画
 
-![Demo](https://github.com/yuzyuzx/assets/blob/main/seasonal-flowers/001.gif)
+![Demo](https://github.com/yuzyuzx/seasonal-flowers/assets/67046330/134a3cc9-0d1e-493a-8b93-5cf5838a848b)
 
 ### ソースコード
 
